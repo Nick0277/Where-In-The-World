@@ -24,9 +24,9 @@ function countryGen() {
       const continents = storage[i].continents[0];
       let capital;
       const img = storage[i].flags.png;
-      if (i === 26 || i === 28 || i === 51 || i === 105) {
-         capital = "Unknown";
-      } else { capital = storage[i].capital[0]; }
+      if (storage[i].hasOwnProperty('capital')) {
+         capital = storage[i].capital[0];
+      } else { capital = "Unknown"; }
       countries.innerHTML += `<div class="template">
       <div class="flagDiv">
          <img class="flag" src=${img} alt="">
@@ -64,9 +64,9 @@ function changeContinent(region) {
       const continents = storage[i].continents[0];
       let capital;
       const img = storage[i].flags.png;
-      if (i === 26 || i === 28 || i === 51 || i === 105) {
-         capital = "Unknown";
-      } else { capital = storage[i].capital[0]; }
+      if (storage[i].hasOwnProperty('capital')) {
+         capital = storage[i].capital[0];
+      } else { capital = "Unknown"; }
       if (storage[i].continents[0] === region) {
          countries.innerHTML += `<div class="template">
             <div class="flagDiv">
@@ -97,9 +97,9 @@ search.addEventListener("input", () => {
          const continents = storage[i].continents[0];
          let capital;
          const img = storage[i].flags.png;
-         if (i === 26 || i === 28 || i === 51 || i === 105) {
-            capital = "Unknown";
-         } else { capital = storage[i].capital[0]; }
+         if (storage[i].hasOwnProperty('capital')) {
+            capital = storage[i].capital[0];
+         } else { capital = "Unknown"; }
          countries.innerHTML += `<div class="template">
       <div class="flagDiv">
          <img class="flag" src=${img} alt="">
